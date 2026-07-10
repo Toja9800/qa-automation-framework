@@ -1,21 +1,26 @@
 # QA Automation Framework
 
 ## Overview
-[2-3 sentences: unit testing framework in Java, what classes it covers,
-purpose of the project — e.g. "first step in learning test automation"]
+A Java unit testing project built while transitioning from manual QA/BA
+into test automation. Covers core testing concepts — unit tests,
+edge cases, and dependency mocking — applied to a small set of
+business logic classes.
 
 ## Stack
-- JUnit 5 — [why, one sentence]
-- AssertJ — [why, e.g. comparison to plain assertEquals]
-- Mockito — [why, what it's used for in this project]
+- **JUnit 5** — industry-standard testing framework in Java
+- **AssertJ** — fluent, more readable assertions than plain `assertEquals`
+- **Mockito** — mocking dependencies to isolate the class under test
 
 ## Test structure
-- `ProductTest` — [what it covers, 1 sentence]
-- `FreelancerTest` — [what it covers + mention happy path AND edge case (zero hours),
-  and why the edge case matters]
-- `EmployeeTest` — [what it covers]
-- `PayrollServiceTest` — [what it covers + why a mock instead of a real
-  NotificationService — put in your own words what you already explained to me above]
+- `ProductTest` — basic getter/setter behavior verification
+- `FreelancerTest` — covers the happy path (hourlyRate × hours) and an
+  edge case (zero hours), to confirm the calculation logic holds at
+  its boundary
+- `EmployeeTest` — verifies fixed-salary payment calculation
+- `PayrollServiceTest` — uses a Mockito mock for `NotificationService`
+  to verify that `PayrollService` triggers a notification after
+  processing payment, without depending on a real notification
+  implementation
 
 ## How to run
 mvn test
