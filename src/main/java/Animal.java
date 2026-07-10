@@ -6,6 +6,6 @@ public class Animal {
     }
 
     public void makeASound(){
-        System.out.println("Dźwięk xd");
+        System.out.println("Dźwięk");
     }
 }
